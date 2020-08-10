@@ -109,7 +109,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-poetry.lock
 
 # Spyder project settings
 .spyderproject
@@ -131,3 +130,12 @@ dmypy.json
 
 # IDE
 .vscode
+
+### Project template
+
+.ipython/
+.env
+.envs/*
+.envs/.local/.telegram
+!.envs/.local/
+circles.csv

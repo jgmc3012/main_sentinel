@@ -1,13 +1,15 @@
 import logging
 
-import click
-from decouple import config as env
 from aiogram import Bot, Dispatcher, executor, types
+import click
+import environ
 
 from .import __version__
 
-API_TOKEN = env('API_TOKEN')
 
+env = environ.Env()
+
+API_TOKEN = env('API_TOKEN')
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
@@ -30,6 +32,6 @@ async def echo(message: types.Message):
 
 @click.command()
 @click.version_option(version=__version__)
-def main():
-    """Sentinela Bot"""
+def start():
+    """Run Sentinel Bot"""
     executor.start_polling(dp, skip_updates=True)
