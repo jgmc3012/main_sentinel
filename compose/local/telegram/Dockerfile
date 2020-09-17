@@ -10,6 +10,8 @@ ENV POETRY_VERSION=1.0.10 \
     POETRY_NO_INTERACTION=1
 
 RUN apt-get update -y
+# psycopg2 dependencies
+RUN apt-get install -y python3-dev libpq-dev postgresql-contrib
 
 # Install poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN pip install "poetry==$POETRY_VERSION"
